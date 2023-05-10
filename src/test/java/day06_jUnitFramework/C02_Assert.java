@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class c02_Assert {
+public class C02_Assert {
 
     // Amazon' a gidip title' in AMAZON icerdigini test edin
 @Test
