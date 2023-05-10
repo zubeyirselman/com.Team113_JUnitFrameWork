@@ -3,7 +3,7 @@ package day06_jUnitFramework;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class C04_AsertionMethodlari {
+public class C04_AssertionMethodlari {
 
     @Test
     public void test01() {
