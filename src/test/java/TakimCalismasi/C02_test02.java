@@ -1,21 +1,26 @@
 package TakimCalismasi;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utilities.TestBase;
 
 public class C02_test02 extends TestBase {
 
     @Test
-    public void test01(){
+    public void test01() throws InterruptedException {
+
 
         // 2. Navigate to url 'http://automationexercise.com'
         driver.get("http://automationexercise.com");
 
+
         // 3. Verify that home page is visible successfully
         WebElement sayfaElementi = driver.findElement(By.xpath("//html[@lang='en']"));
         sayfaElementi.isDisplayed();
+
 
         // 4. Click on 'Signup / Login' button
         driver.findElement(By.xpath("//a[@href='/login']")).click();
