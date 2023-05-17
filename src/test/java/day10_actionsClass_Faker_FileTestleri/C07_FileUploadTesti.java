@@ -44,7 +44,7 @@ public class C07_FileUploadTesti extends TestBase {
         driver.findElement(By.xpath("//input[@id='file-submit']")).click();
 
         // “File Uploaded!” textinin goruntulendigini test edelim.
-        WebElement sonucYazisi = driver.findElement(By.xpath("File Uploaded!"));
+        WebElement sonucYazisi = driver.findElement(By.xpath("//h3[text()='File Uploaded!']"));
         Assert.assertTrue(sonucYazisi.isDisplayed());
 
     }
