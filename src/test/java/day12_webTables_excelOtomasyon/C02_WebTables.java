@@ -63,9 +63,27 @@ public class C02_WebTables extends TestBase {
 
         // 9. Tabloda "First Name" i Kierra olan kisinin Salary'sini yazdirin
 
+        for (int i = 2; i < satirlarList.size() ; i++) {
+            WebElement isim = driver.findElement(By.xpath(getDinamikXpath(i,1)));
+            if (isim.getText().equalsIgnoreCase("Kierra")){
+                WebElement salary= driver.findElement(By.xpath(getDinamikXpath(i,5)));
+                System.out.println("Kierra'nin maaasi : " + salary.getText());
+            }
+        }
 
         // 10. Bir method olusturun; satir ve sutun sayisini girdigimde bana datayi yazdirsin.
+        dataYazdir(3,3);
 
+    }
 
+    public String getDinamikXpath(int satirNo,int sutunNo){
+
+        return "(//div[@role='row'])["+satirNo+"]/div["+sutunNo+"]" ;
+    }
+
+    private void dataYazdir(int satirNo, int sutunNo) {
+        String dinamikXPath= "(//div[@role='row'])["+satirNo+"]/div["+sutunNo+"]" ;
+        WebElement istenenElement= driver.findElement(By.xpath(dinamikXPath));
+        System.out.println("Istenen hucredeki data : " + istenenElement.getText());
     }
 }
