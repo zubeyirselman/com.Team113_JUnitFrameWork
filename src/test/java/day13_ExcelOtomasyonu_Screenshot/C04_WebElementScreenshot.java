@@ -1,16 +1,16 @@
 package day13_ExcelOtomasyonu_Screenshot;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import utilities.ReusableMethods;
 import utilities.TestBase;
 
-import java.io.File;
 import java.io.IOException;
 
-public class C03_TumSayfaScreenshot extends TestBase {
+public class C04_WebElementScreenshot extends TestBase {
 
     @Test
     public void test01() throws IOException {
@@ -34,16 +34,8 @@ public class C03_TumSayfaScreenshot extends TestBase {
         String actualSonucYazisi= sonucElementi.getText();
         Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));
 
-        // rapora eklenmek uzere, tum sayfanin ekran goruntusunu alalim
-
-        TakesScreenshot tss = (TakesScreenshot) driver;
-
-        File tumSayfaFoto = new File("target/ekranFotolari/tumSayfaFoto.png");
-
-        File geciciFoto = tss.getScreenshotAs(OutputType.FILE);
-
-        FileUtils.copyFile(geciciFoto,tumSayfaFoto);
-
+        // rapora eklenmek uzere, sonuc elementinin ekran goruntusunu alalim
+        ReusableMethods.webElementFotoCek(driver,sonucElementi);
         ReusableMethods.tumSayfaFotoCek(driver);
 
     }
